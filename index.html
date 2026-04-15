@@ -312,56 +312,6 @@
     align-items: center;
     margin-top: 48px;
   }
-  .schedule-visual {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    overflow: hidden;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-  }
-  .schedule-header {
-    background: var(--red);
-    color: var(--white);
-    padding: 14px 20px;
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 1px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .calendar-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 1px;
-    background: var(--border);
-    padding: 1px;
-  }
-  .cal-day {
-    background: var(--white);
-    padding: 10px 6px;
-    text-align: center;
-    font-size: 12px;
-  }
-  .cal-day.header { font-weight: 700; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--gray-light); }
-  .cal-day.available { cursor: pointer; }
-  .cal-day.available:hover { background: #fff0f0; color: var(--red); }
-  .cal-day.selected { background: var(--red); color: var(--white); font-weight: 700; }
-  .cal-day.today { font-weight: 700; color: var(--red); }
-  .cal-day.dim { color: var(--border); }
-  .time-slots { padding: 16px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-  .time-slot {
-    background: var(--gray-pale);
-    padding: 8px;
-    text-align: center;
-    font-size: 12px;
-    font-weight: 600;
-    border-radius: 2px;
-    cursor: pointer;
-    transition: all .2s;
-  }
-  .time-slot:hover { background: var(--red); color: var(--white); }
-  .time-slot.full { opacity: .3; cursor: not-allowed; }
 
   .schedule-info { }
   .schedule-info p { font-size: 16px; color: var(--gray); line-height: 1.7; margin-bottom: 24px; }
@@ -610,6 +560,51 @@
   }
   .section-nav a:hover { color: var(--red); border-color: var(--red); }
 
+  /* ── CONTACT CARD ── */
+  .contact-card {
+    background: var(--black);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+  }
+  .contact-card-header {
+    background: var(--red);
+    padding: 32px 36px;
+  }
+  .contact-card-body {
+    padding: 8px 0;
+  }
+  .contact-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px 36px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    text-decoration: none;
+    transition: background .2s;
+  }
+  .contact-row:last-child { border-bottom: none; }
+  a.contact-row:hover { background: rgba(255,255,255,0.04); }
+  .contact-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+  .contact-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--red-light);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .contact-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--white);
+  }
+  .contact-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    margin-top: 2px;
+  }
+
   /* ── HAMBURGER BUTTON ── */
   .nav-hamburger {
     display: none;
@@ -745,10 +740,7 @@
     footer { padding: 40px 20px 20px; }
     .footer-top { grid-template-columns: 1fr; gap: 28px; }
 
-    .schedule-visual { margin-top: 8px; }
-    .time-slots { grid-template-columns: repeat(3, 1fr); }
-
-    .faq-layout { gap: 24px; }
+.faq-layout { gap: 24px; }
     .section-title[style] { font-size: 28px !important; }
   }
 </style>
@@ -1075,7 +1067,7 @@
       <!-- Tyleigh Hill -->
       <div class="team-card">
         <div class="team-photo">
-          <img src="./images/tyleigh-hill.png" alt="Tyleigh Hill" style="object-position: center 30%;">
+          <img src="./images/tyleigh-hill.png" alt="Tyleigh Hill" style="object-position: center 15%;">
           TH
         </div>
         <div class="team-info">
@@ -1199,28 +1191,42 @@
         </ul>
         <a href="tel:2086244008" class="btn-primary">Call to Book: 208-624-4008</a>
       </div>
-      <div class="schedule-visual">
-        <div class="schedule-header">
-          <span>📅 March 2026</span>
-          <span>◀ ▶</span>
+      <div class="contact-card">
+        <div class="contact-card-header">
+          <div class="section-label" style="color:rgba(255,255,255,0.5); margin-bottom:6px;">Reach Us</div>
+          <div style="font-family:var(--font-cond); font-size:28px; font-weight:800; color:var(--white); text-transform:uppercase; line-height:1.1;">We're Ready<br>When You Are</div>
         </div>
-        <div class="calendar-grid">
-          <div class="cal-day header">Su</div><div class="cal-day header">Mo</div><div class="cal-day header">Tu</div><div class="cal-day header">We</div><div class="cal-day header">Th</div><div class="cal-day header">Fr</div><div class="cal-day header">Sa</div>
-          <div class="cal-day dim">23</div><div class="cal-day dim">24</div><div class="cal-day dim">25</div><div class="cal-day dim">26</div><div class="cal-day dim">27</div><div class="cal-day dim">28</div><div class="cal-day dim">1</div>
-          <div class="cal-day available">2</div><div class="cal-day available">3</div><div class="cal-day available">4</div><div class="cal-day available">5</div><div class="cal-day available">6</div><div class="cal-day available">7</div><div class="cal-day available">8</div>
-          <div class="cal-day available">9</div><div class="cal-day available">10</div><div class="cal-day available">11</div><div class="cal-day available">12</div><div class="cal-day selected">13</div><div class="cal-day available">14</div><div class="cal-day available">15</div>
-          <div class="cal-day available">16</div><div class="cal-day today">17</div><div class="cal-day available">18</div><div class="cal-day available">19</div><div class="cal-day available">20</div><div class="cal-day available">21</div><div class="cal-day available">22</div>
-        </div>
-        <div class="time-slots">
-          <div class="time-slot">8:00 AM</div>
-          <div class="time-slot full">9:00 AM</div>
-          <div class="time-slot">10:00 AM</div>
-          <div class="time-slot full">11:00 AM</div>
-          <div class="time-slot">1:00 PM</div>
-          <div class="time-slot">2:00 PM</div>
-          <div class="time-slot full">3:00 PM</div>
-          <div class="time-slot">4:00 PM</div>
-          <div class="time-slot">5:00 PM</div>
+        <div class="contact-card-body">
+          <a href="tel:2086244008" class="contact-row">
+            <div class="contact-icon">📞</div>
+            <div>
+              <div class="contact-label">Phone</div>
+              <div class="contact-value">208-624-4008</div>
+            </div>
+          </a>
+          <a href="mailto:fremontpt@gmail.com" class="contact-row">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <div class="contact-label">Email</div>
+              <div class="contact-value">fremontpt@gmail.com</div>
+            </div>
+          </a>
+          <div class="contact-row">
+            <div class="contact-icon">🕐</div>
+            <div>
+              <div class="contact-label">Hours</div>
+              <div class="contact-value">Mon – Fri &nbsp;·&nbsp; 9:00 AM – 5:00 PM</div>
+              <div class="contact-sub">Closed Saturday &amp; Sunday</div>
+            </div>
+          </div>
+          <a href="https://maps.google.com/?q=40+Bridge+St+St+Anthony+ID+83445" target="_blank" class="contact-row">
+            <div class="contact-icon">📍</div>
+            <div>
+              <div class="contact-label">Location</div>
+              <div class="contact-value">40 Bridge St</div>
+              <div class="contact-sub">St. Anthony, ID 83445</div>
+            </div>
+          </a>
         </div>
       </div>
     </div>
