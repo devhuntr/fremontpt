@@ -517,6 +517,28 @@ footer {
 }
 .footer-bottom a { color: rgba(255,255,255,0.3); text-decoration: none; }
 
+/* ── SOCIAL ICONS ── */
+.social-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.5);
+  transition: background .2s, color .2s;
+}
+.social-icon:hover {
+  background: var(--red);
+  color: var(--white);
+}
+
 /* ── DIVIDER ── */
 .divider { height: 1px; background: var(--border); }
 
